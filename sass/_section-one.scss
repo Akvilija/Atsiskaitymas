@@ -1,0 +1,110 @@
+@use "./variables" as v;
+@use "./responsive";
+
+.first-section {
+  display: grid;
+
+  @include responsive.xl {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 104px;
+  }
+
+  @include responsive.md {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .first-section-description {
+    position: relative;
+
+    @include responsive.xl {
+      width: 100%;
+    }
+
+    @include responsive.md {
+      width: 60%;
+    }
+
+    .firs-section-square {
+      background-color: antiquewhite;
+      height: 153px;
+      width: 800px;
+      position: absolute;
+      top: -35px;
+      left: -180px;
+
+      @include responsive.md {
+        width: 560px;
+      }
+    }
+
+    p {
+      text-align: justify;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 21.12px;
+      letter-spacing: 0.04em;
+      color: v.$lighter-grey;
+    }
+  }
+
+  .first-section-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include responsive.xl {
+      gap: 90px;
+    }
+
+    @include responsive.md {
+      align-self: center;
+      justify-self: center;
+      gap: 40px;
+    }
+
+    .first-section-content-card-wrapper {
+      width: 221px;
+      height: 152px;
+      transition: background-color, box-shadow 0.5s ease-in;
+
+      &:hover {
+        background-color: v.$almost-white;
+        box-shadow: 0px 0px 5px 5px v.$almost-white;
+      }
+
+      .first-section-content-card-img-wrapper {
+        background-color: v.$white;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .first-section-content-card-img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      .first-section-content-card-content {
+        h3 {
+          font-size: 24px;
+          font-weight: 500;
+          line-height: 27.84px;
+          text-align: left;
+          margin-top: 16px;
+          margin-bottom: 0px;
+        }
+
+        p {
+          font-size: 13px;
+          font-weight: 400;
+          line-height: 17.16px;
+          letter-spacing: 0.04em;
+          text-align: justify;
+          margin-top: 6px;
+        }
+      }
+    }
+  }
+}

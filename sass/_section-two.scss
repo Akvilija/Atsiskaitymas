@@ -1,0 +1,127 @@
+@use "./variables" as v;
+@use "./responsive";
+
+.section-two {
+  padding-top: 147px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @include responsive.xl {
+    margin-right: 100px;
+  }
+
+  @include responsive.md {
+    margin-right: 0px;
+  }
+
+  .section-two-content {
+    display: flex;
+    gap: 40px;
+    margin-top: 56px;
+    position: relative;
+
+    @include responsive.md {
+      flex-direction: column;
+    }
+
+    .dots {
+      position: absolute;
+      top: 165px;
+      left: -34px;
+      z-index: 2;
+    }
+
+    .square {
+      position: absolute;
+      left: 970px;
+      top: 200px;
+
+      @include responsive.md {
+        left: 70px;
+        top: 950px;
+      }
+    }
+
+    .content-card-wrapper {
+      width: 360px;
+      height: 338px;
+      background: linear-gradient(
+        0deg,
+        rgb(208, 214, 208) 0%,
+        rgb(209, 213, 209) 7%,
+        rgba(255, 255, 255, 1) 77%
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 10;
+      transition: background 0.5s ease-out;
+
+      &:hover {
+        background: rgba(100, 123, 100, 1);
+      }
+
+      .content-card-img {
+        width: 64px;
+        height: 64px;
+        margin-top: 78px;
+        margin-left: 50px;
+
+        svg {
+          path {
+            transition: fill 0.5s ease-out;
+            &:hover {
+              fill: v.$almost-white;
+            }
+          }
+        }
+      }
+
+      .content-card-content {
+        padding: 0px 50px 72px 50px;
+
+        h3 {
+          font-size: 24px;
+          font-weight: 500;
+          line-height: 32.78px;
+          text-align: left;
+          margin-bottom: 6px;
+          margin-top: 24px;
+          text-transform: uppercase;
+          color: v.$darker-grey;
+          transition: color 0.5s ease-out;
+
+          &:hover {
+            color: v.$almost-white;
+          }
+        }
+
+        .smaller {
+          font-size: 24px;
+          transition: font-size 0.5s ease-out;
+
+          &:hover {
+            font-size: 20px;
+          }
+        }
+
+        p {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 21.12px;
+          letter-spacing: 0.04em;
+          text-align: left;
+          margin: 0px;
+          color: v.$lighter-grey;
+          transition: color 0.5s ease-out;
+
+          &:hover {
+            color: v.$almost-white;
+          }
+        }
+      }
+    }
+  }
+}

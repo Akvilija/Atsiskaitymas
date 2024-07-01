@@ -1,0 +1,73 @@
+@use "./variables" as v;
+@use "./responsive";
+
+.section-three {
+  display: flex;
+  // width: 1300px;
+
+  .section-three-img-wrapper {
+    position: relative;
+    @include responsive.xl {
+      width: 563px;
+      height: 545px;
+      margin-top: 168px;
+      margin-bottom: 197px;
+      margin-left: 77px;
+    }
+
+    @include responsive.md {
+      height: 0px;
+    }
+
+    .orange-square {
+      position: absolute;
+      @include responsive.md {
+        width: 320px;
+        left: -300px;
+        top: 10px;
+      }
+
+      @include responsive.lg {
+        width: 400px;
+        left: -340px;
+      }
+    }
+
+    .photo-position {
+      position: absolute;
+      left: -77px;
+      top: -40px;
+      z-index: 99;
+
+      @include responsive.md {
+        width: 350px;
+        left: -370px;
+      }
+
+      @include responsive.lg {
+        width: 400px;
+        left: -400px;
+      }
+    }
+  }
+
+  .section-three-content {
+    @include responsive.xl {
+      width: 412px;
+      height: 316px;
+      margin-left: 105px;
+      margin-right: 160px;
+      margin-top: 268px;
+      margin-bottom: 145px;
+    }
+
+    @include responsive.md {
+      width: 50%;
+      margin-top: 150px;
+    }
+
+    p {
+      text-align: justify;
+    }
+  }
+}

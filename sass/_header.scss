@@ -1,0 +1,155 @@
+@use "./variables" as v;
+@use "./responsive";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+header {
+  margin-left: 140px;
+  margin-right: 140px;
+  width: 1000px;
+
+  @include responsive.md {
+    margin-left: 32px;
+    width: 600px;
+  }
+
+  .navigation-and-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 55px;
+    margin-bottom: 61px;
+    width: 1200px;
+
+    @include responsive.md {
+      margin-bottom: 24px;
+    }
+
+    nav {
+      ul {
+        list-style-type: none;
+        display: flex;
+        margin: 0px;
+        align-items: center;
+
+        @include responsive.md {
+          display: none;
+        }
+
+        li {
+          padding-right: 48px;
+
+          &::first-letter {
+            font-size: 15px;
+          }
+
+          a {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: v.$darker-grey;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 20px;
+
+            span {
+              display: inline-block;
+              &::first-letter {
+                font-size: 14px;
+              }
+            }
+          }
+          #register-button {
+            color: white;
+            background-color: #647b64;
+            border: none;
+            text-transform: capitalize;
+            width: 93px;
+            height: 40px;
+            top: 55px;
+            left: 1207px;
+            padding: 10px 15px 10px 15px;
+            gap: 10px;
+            border-radius: 3px;
+            opacity: 0px;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+
+    .header-text {
+      width: 495px;
+      height: 375px;
+      margin-top: 155px;
+      margin-bottom: 244px;
+      margin-right: 244px;
+      background-image: url(../Ellipse\ 116.svg);
+      background-size: 84px 84px;
+      background-repeat: no-repeat;
+      background-position-x: 147px;
+
+      @include responsive.md {
+        width: 245px;
+        height: 193px;
+        margin: 60px 0px 0px 0px;
+      }
+
+      h1 {
+        color: v.$darker-grey;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 55.68px;
+        margin: 0px;
+
+        &::first-letter {
+          font-size: 48px;
+
+          @include responsive.md {
+            font-size: 24px;
+          }
+        }
+
+        @include responsive.md {
+          font-size: 20px;
+          line-height: 27.84px;
+        }
+      }
+      p {
+        color: v.$lighter-grey;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 26.4px;
+        margin-top: 24px;
+
+        @include responsive.md {
+          font-size: 10px;
+          line-height: 13.2px;
+        }
+      }
+    }
+
+    .header-content-img {
+      @include responsive.md {
+        // width: 343px;
+        // height: 585.91px;
+        width: 178px;
+        height: 304px;
+        margin-bottom: 100px;
+      }
+
+      img {
+        @include responsive.md {
+          width: 178px;
+          height: 304px;
+          overflow-y: visible;
+          margin-bottom: 72px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+@use "./variables" as v;
+@use "./responsive";
+
+.section-four {
+  margin-top: 137px;
+  width: 1200px;
+  margin-bottom: 172px;
+
+  @include responsive.md {
+    margin-top: 30px;
+  }
+
+  .section-four-top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .section-four-content {
+    display: flex;
+    column-gap: 40px;
+    position: relative;
+
+    .section-four-card-wrapper {
+      width: 360px;
+      height: 419px;
+      margin-top: 50px;
+
+      .section-four-img-and-names {
+        background-color: v.$white;
+        display: flex;
+
+        .section-four-img {
+          width: 159px;
+          height: 268px;
+          margin-top: 32px;
+          margin-left: 40px;
+        }
+        .section-four-names {
+          display: flex;
+          flex-direction: column;
+          margin-top: 49px;
+          margin-right: 32px;
+
+          .specialty {
+            display: inline-block;
+            color: v.$darker-grey;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 18.56px;
+            text-align: left;
+          }
+          .name-surname {
+            display: inline-block;
+            color: v.$lighter-grey;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 17.16px;
+            letter-spacing: 0.04em;
+            text-align: left;
+          }
+        }
+      }
+    }
+    .section-four-card-quate {
+      padding: 24px 60px 32px 40px;
+      background: linear-gradient(
+        0deg,
+        rgba(194, 212, 194, 1) 0%,
+        rgba(201, 210, 201, 1) 7%,
+        rgba(255, 255, 255, 1) 77%
+      );
+
+      i {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 21.12px;
+        letter-spacing: 0.04em;
+        text-align: left;
+        color: v.$lighter-grey;
+      }
+    }
+  }
+
+  .different-position {
+    position: absolute;
+    right: -360px;
+  }
+}

@@ -1,0 +1,141 @@
+@use "./variables" as v;
+@use "./responsive";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  background-color: v.$bg-lighter-orange;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main {
+  @include responsive.xl {
+    margin-left: 140px;
+  }
+
+  @include responsive.md {
+    margin-left: 32px;
+  }
+}
+
+button {
+  background: rgb(100, 123, 100);
+  background: linear-gradient(
+    90deg,
+    rgba(100, 123, 100, 1) 53%,
+    rgba(102, 172, 102, 1) 100%
+  );
+  width: 350px;
+  height: 73px;
+  border-radius: 2px 0px 0px 0px;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: 0px;
+  margin-top: 32px;
+  transition: height 0.5s ease-in;
+  justify-content: space-around;
+
+  @include responsive.md {
+    width: 175px;
+    height: 36px;
+  }
+
+  &:hover {
+    height: 80px;
+  }
+
+  .button-name {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20.08px;
+    padding: 27px 0px 26px 29px;
+    letter-spacing: 2.48px;
+    text-transform: uppercase;
+
+    @include responsive.md {
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .arrow {
+      // padding: 29.3px 32px 28.7px 142px;
+      box-sizing: content-box;
+
+      @include responsive.xl {
+        width: 22px;
+        height: 15px;
+      }
+
+      @include responsive.md {
+        width: 11px;
+        height: 5px;
+      }
+    }
+  }
+}
+
+.sub-section-name {
+  color: v.$orange;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32.78px;
+  margin: 0px;
+  text-align: center;
+  z-index: 99;
+}
+
+.section-name {
+  font-size: 41px;
+  font-weight: 500;
+  line-height: 45.1px;
+  text-align: center;
+  color: v.$green;
+  text-transform: uppercase;
+  margin-top: 17px;
+  z-index: 99;
+}
+
+.align-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.page-title-name-img-wrapper {
+  display: flex;
+
+  .awesome-padding-left {
+    padding-left: 12.01px;
+
+    @include responsive.md {
+      width: 138px;
+      height: 32px;
+    }
+  }
+
+  @include responsive.md {
+    width: 138px;
+    height: 32px;
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+a {
+  text-decoration: none;
+}

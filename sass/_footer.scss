@@ -1,0 +1,127 @@
+@use "./variables" as v;
+@use "./responsive";
+
+footer {
+  background-color: v.$bg-orange;
+  padding: 97px 140px 102px 140px;
+
+  @include responsive.md {
+    padding: 40px 60px 32px 40px;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @include responsive.md {
+      grid-template-columns: 1fr;
+    }
+
+    @include responsive.lg {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-first-part {
+      margin-right: 66px;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 18.48px;
+      letter-spacing: 0.04em;
+      text-align: left;
+      color: v.$lighter-grey;
+    }
+
+    .social-icons-wrapper {
+      ul {
+        display: flex;
+        list-style-type: none;
+        padding-left: 0px;
+
+        li {
+          margin-right: 23.47px;
+          height: 32px;
+          width: 32px;
+          border-radius: 50%;
+          background-color: v.$transparent-green;
+
+          a {
+            padding: 7.47px;
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+    }
+    .footer-section {
+      display: grid;
+      @include responsive.md {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @include responsive.lg {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      div {
+        @include responsive.lg {
+          padding-right: 20px;
+        }
+      }
+
+      .footer-section-name {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 30px;
+        color: v.$green;
+        text-transform: capitalize;
+        margin-top: 0px;
+      }
+    }
+
+    ul {
+      li {
+        margin-top: 12px;
+        a {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 26px;
+          gap: 20px;
+          color: v.$lighter-grey;
+          text-transform: capitalize;
+        }
+      }
+    }
+
+    form {
+      .form-control {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 30px;
+          text-align: left;
+          text-transform: uppercase;
+          color: v.$green;
+        }
+
+        #email {
+          height: 113px;
+        }
+
+        .footer-button {
+          margin-top: 24px;
+
+          @include responsive.md {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
